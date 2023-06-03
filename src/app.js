@@ -16,7 +16,7 @@ app.use(helmet({
 app.use(cors());
 
 // Rutas
-app.use(router);
+app.use(('/api/v1'), router);
 app.get('/', (req, res) => {
     return res.send("Mi api ya esta funcionando");
 })
