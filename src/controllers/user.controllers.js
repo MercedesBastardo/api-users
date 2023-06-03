@@ -107,10 +107,6 @@ const getLoggetUser = catchError(async(req,res) => {
     return res.json(user)
 });
 
-const userConection = catchError(async(req,res) => {
-
-    return res.json("estoy en la pagina de bluetooth")
-})
 
 module.exports = {
     getAll,
