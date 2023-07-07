@@ -12,7 +12,7 @@ const getAll = catchError(async(req, res) => {
 });
 
 const create = catchError(async(req, res) => {
-    const {email, password, firstName, lastName, genre, perfilePhoto, birthDay, phone, frontBaseUrl} = req.body;
+    const {email, password, firstName, lastName, genre, perfilePhoto, birthDay, phone, frontBaseUrl } = req.body;
     const hashedPassword = await bcrypt.hash(password, 10);
     const result = await User.create({
         email, 
@@ -23,7 +23,7 @@ const create = catchError(async(req, res) => {
         perfilePhoto, 
         birthDay, 
         phone, 
-        frontBaseUrl
+        frontBaseUrl,
     });
     const code = require('crypto').randomBytes(32).toString("hex");
     const link = `${frontBaseUrl}/verify_email/${code}`;

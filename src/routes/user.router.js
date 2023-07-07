@@ -11,7 +11,7 @@ userRouter.route('/')
 userRouter.route('/:id')
     .get(verifyJWT, getOne)
     .delete(verifyJWT, remove)
-    .put(verifyJWT, update);
+    .put(update);
 
 userRouter.route('/login')
     .post(login)
